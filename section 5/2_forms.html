@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms Demo</title>
+</head>
+
+<body>
+    <h1>Forms Demo</h1>
+    <button>Outside the form</button>
+    <form action="/tacos">
+        <p>
+            <label for="username">Enter a username:</label>
+            <input type="text" placeholder="username" id="username" name="username">
+        </p>
+        <p>
+            <label for="password">Enter a password:</label>
+            <input type="password" placeholder="password" id="password" name="password">
+        </p>
+        <p>
+            <label for="color">Pick a color:</label>
+            <input type="color" id="color" name="color">
+        </p>
+        <p>
+            <label for="number">Enter a number:</label>
+            <input type="number" id="number" name="num" min="1" max="1000" step="5">
+        </p>
+        <button>Submit</button>
+        <button type="button">Regular button</button>
+    </form>
+
+    <hr>
+
+    <h2>Hijacking Searches</h2>
+    <form action="https://www.daraz.lk/catalog">
+        <input type="text" id="search" name="q">
+        <button>Search Daraz</button>
+    </form>
+
+    <form action="https://www.youtube.com/results">
+        <input type="text" name="search_query">
+        <button>Search Youtube</button>
+    </form>
+    <hr>
+    <h2>More Inputs</h2>
+    <form action="/birds">
+        <input type="checkbox" name="read" id="read">
+        <label for="read">I read the document</label>
+        <br>
+        <input type="checkbox" name="agree_tos" id="agree" checked>
+        <label for="agree">I agree to everything</label>
+        <br>
+        <label>To which group do you like to join?</label>
+        <input type="radio" name="group" id="group1" value="G1" checked> <label for="group1">G1</label>
+        <input type="radio" name="group" id="group2" value="G2"> <label for="group2">G2</label>
+        <input type="radio" name="group" id="group3" value="G3"> <label for="group3">G3</label>
+        <br>
+        <label for="chicken_select">Select a chicken type</label>
+        <select name="chicken" id="chicken_select">
+            <option value="">choose a chicken</option>
+            <option value="silkie">Silkie</option>
+            <option value="browny">Browny</option>
+            <option value="roady">Roady</option>
+        </select>
+        <br>
+        <label for="cheese">Amount of cheese need</label>
+        <input type="range" id="cheese" name="cheese" min="0" max="10" value="3" step="1">
+        <p>
+            <label for="requests">Any special Requests</label>
+            <br>
+            <textarea name="requests" id="requests" cols="30" rows="6" placeholder="Type Something Here..."></textarea>
+        </p>
+        <button>Submit</button>
+    </form>
+    <hr>
+    <h2>Validations</h2>
+    <form action="/dummy">
+        <label for="first">Enter First Name:</label>
+        <input type="text" name="first" id="first" required>
+        <label for="username">Enter Username:</label>
+        <input type="text" name="username" id="username" placeholder="username" minlength="5" maxlength="20" required>
+        <p>
+            <label for="email">Enter Email:</label>
+            <input type="email" name="email" id="email" required>
+        </p>
+        <button>Submit</button>
+    </form>
+</body>
+
+</html>
