@@ -1,0 +1,16 @@
+span {
+    background-color: red;
+    border: 1px solid black;
+    padding: 50px;
+    margin: 40px;
+    width: 100px;
+}
+
+div {
+    width: 200px;
+    height: 200px;
+    background-color: lightseagreen;
+    border: 1px solid black;
+    display: inline-block;
+    margin: 20px;
+}
