@@ -1,0 +1,44 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.card {
+    width: 40em;
+    margin: 0 auto;
+    margin-top: 2em;
+}
+
+.card-header {
+    font-size: 1.3em;
+    letter-spacing: 0.05em;
+}
+
+.card-content {
+    padding-bottom: 0;
+}
+
+#scores {
+    margin-bottom: 0.25em;
+}
+
+#para {
+    margin-bottom: 0;
+}
+
+.dropdown {
+    margin-left: 0.5em;
+    padding-bottom: 1em;
+}
+
+.score-text {
+    font-size: 1.2em;
+    font-weight: bold;
+    display: inline-block;
+    padding-top: 0.23em;
+}
+
+.card-footer-item {
+    font-size: 1.3em;
+    letter-spacing: 0.04em;
+    border-radius: 0.25em;
+}
