@@ -21,10 +21,6 @@ const showResults = async (results) => {
         }
         image.classList.add('card-img-top')
 
-        const title = document.createElement('h5')
-        title.innerText = result.show.name
-        title.classList.add('card-title')
-
         const column = document.createElement('div')
         column.classList.add('col')
 
@@ -35,7 +31,9 @@ const showResults = async (results) => {
 
         const cardBody = document.createElement('div')
         cardBody.classList.add('card-body')
-        cardBody.appendChild(title)
+        cardBody.innerHTML = `<h3 class="card-title">${result.show.name}</h3>
+        <p class="card-text mb-0"><span class="h6">Rating</span> : ${result.show.rating.average || "Not Available"}</p>
+        <p class="card-text"><span class="h6">Runtime</span>: ${result.show.runtime || "Not Available"}</p>`
 
         card.appendChild(cardBody)
 
@@ -53,4 +51,3 @@ searchbtn.addEventListener('click', async (e) => {
     titleField.value = ""
 
 })
-// searchbtn.addEventListener('click', getFirstResult)
