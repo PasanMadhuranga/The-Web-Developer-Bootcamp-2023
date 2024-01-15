@@ -6,36 +6,40 @@ const getResults = async (query) => {
 
 const showResults = async (results) => {
     const resultsContainer = document.querySelector('#resultsContainer')
-    const oldResults = document.querySelector('.row')
+    const oldResults = document.querySelector('#results')
     oldResults && oldResults.remove()
+
     const newResultsContainer = document.createElement('div')
+    newResultsContainer.id = 'results'
     newResultsContainer.classList.add('row', 'row-cols-1', 'row-cols-md-2', 'row-cols-xl-3', 'row-cols-xxl-4', 'mx-auto', 'g-4')
     resultsContainer.appendChild(newResultsContainer)
+
+    if (!results.length) {
+        newResultsContainer.innerHTML = `<p class="lead text-center mx-auto">No Results Found</p>`
+        return
+    }
+
+
     for (let result of results) {
-        const image = document.createElement('img')
-        if (result.show.image) {
-            image.src = result.show.image.medium
-        }
-        else {
-            image.src = 'NoImage.jpg'
-        }
-        image.classList.add('card-img-top')
+        let imageSrc = result.show.image ? result.show.image.medium : 'NoImage.jpg'
 
         const column = document.createElement('div')
         column.classList.add('col')
 
-        const card = document.createElement('div')
-        card.classList.add('card', 'mx-auto')
-        column.appendChild(card)
-        card.appendChild(image)
-
-        const cardBody = document.createElement('div')
-        cardBody.classList.add('card-body')
-        cardBody.innerHTML = `<h3 class="card-title">${result.show.name}</h3>
-        <p class="card-text mb-0"><span class="h6">Rating</span> : ${result.show.rating.average || "Not Available"}</p>
-        <p class="card-text"><span class="h6">Runtime</span>: ${result.show.runtime || "Not Available"}</p>`
-
-        card.appendChild(cardBody)
+        column.innerHTML = `
+            <div class="card mx-auto">
+                <div class="front">
+                    <img src=${imageSrc} alt="Image of the TV Show" class="card-img-top">
+                    <div class="card-body">
+                        <h3 class="card-title">${result.show.name}</h3>
+                        <p class="card-text mb-0"><span class="h6">Rating</span> : ${result.show.rating.average || "Not Available"}</p>
+                        <p class="card-text"><span class="h6">Runtime</span>: ${result.show.runtime || "Not Available"}</p>
+                    </div>
+                </div>
+                <div class="back">
+                    ${result.show.summary || "No Summary Available"}
+                </div>
+            </div>`
 
         newResultsContainer.appendChild(column)
     }
