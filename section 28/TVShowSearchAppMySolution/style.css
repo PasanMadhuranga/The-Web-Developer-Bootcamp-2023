@@ -1,5 +1,14 @@
+body {
+    background-color: #e1eff8;
+}
+
 .card {
-    width: 25rem;
+    /* width: 20rem; */
+    transition: all 1s;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
 }
 
 /* .card-img-top {
@@ -7,3 +16,70 @@
     height: 15vw;
     object-fit: cover;
 } */
+
+.card-container {
+    position: relative;
+    perspective: 2000rem;
+    height: 630px;
+}
+
+.card-container:hover .card-front {
+    transform: rotateY(180deg);
+}
+
+.card-container:hover .card-back {
+    transform: rotateY(0deg);
+}
+
+.card-front {
+    background-color: #B4D4FF;
+}
+
+.card-front .card-title {
+    color: #3559E0;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    text-align: center;
+    background-color: #86B6F6;
+}
+
+.card-back p {
+    font-size: 1.2em;
+    color: #E0F4FF;
+}
+
+.card-back .card-title {
+    color: #3559E0;
+}
+
+@media screen and (min-width: 1600px) {
+    .card-container {
+        height: 800px;
+    }
+}
+
+@media screen and (max-width: 762px) {
+    .card-container {
+        height: 71em;
+    }
+}
+
+@media screen and (max-width: 612px) {
+    .card-container {
+        height: 58em;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .card-container {
+        height: 53em;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .card-container {
+        height: 43em;
+    }
+}

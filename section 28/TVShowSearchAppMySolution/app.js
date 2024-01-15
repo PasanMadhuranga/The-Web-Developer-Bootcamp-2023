@@ -27,8 +27,8 @@ const showResults = async (results) => {
         column.classList.add('col')
 
         column.innerHTML = `
-            <div class="card mx-auto">
-                <div class="front">
+            <div class="card-container mx-auto">
+                <div class="card card-front">
                     <img src=${imageSrc} alt="Image of the TV Show" class="card-img-top">
                     <div class="card-body">
                         <h3 class="card-title">${result.show.name}</h3>
@@ -36,8 +36,11 @@ const showResults = async (results) => {
                         <p class="card-text"><span class="h6">Runtime</span>: ${result.show.runtime || "Not Available"}</p>
                     </div>
                 </div>
-                <div class="back">
-                    ${result.show.summary || "No Summary Available"}
+                <div class="card card-back">
+                    <div class="card-body align-middle">
+                        <h3 class="card-title">Summary</h3>
+                        ${result.show.summary || "Summary Not Available"}
+                    </div>
                 </div>
             </div>`
 
