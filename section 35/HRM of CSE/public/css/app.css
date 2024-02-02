@@ -5,6 +5,7 @@ body {
 h1, h2 {
     font-family: 'Castoro Titling', serif;
     color: #280274;
+    text-align: center;
 }
 
 .member-list {

@@ -5,15 +5,19 @@
 <body>
     <%- include('../partials/navbar') %>
     
-    <h1>Update the details of <%= details.name %></h1>
-    <form method="post" action="/<%= category %>/<%= details.id %>?_method=PATCH">
+    <h1 class="d-flex justify-content-center my-4">Update the details of <%= details.name %></h1>
+
+    <form class="d-grid gap-3 col-8 col-md-5 col-5 mx-auto" method="post" action="/<%= category %>/<%= details.id %>?_method=PATCH">
         <% for (let key in details) { %>
             <% if (key !== 'id') { %>
-                <label for="<%= key %>"><%= key %>: </label>
-                <input type="<%= key === 'email' ? 'email' : key === 'age' ? 'number' : 'text' %>" value="<%= details[key] %>" name="<%= key %>">
+                <div class="form-group">
+                    <label class="mb-1 input-label" for="<%= key %>"><%= key %>: </label>
+                    <input class="form-control" type="<%= key === 'email' ? 'email' : key === 'age' ? 'number' : 'text' %>" value="<%= details[key] %>" name="<%= key %>" placeholder="Enter <%= key %>...">
+                </div>
             <% } %>
         <% } %>
-        <button>Update</button>
+
+        <button type="submit" class="btn btn-primary custom-btn mt-3">Update</button>
     </form>
 </body>
 </html>

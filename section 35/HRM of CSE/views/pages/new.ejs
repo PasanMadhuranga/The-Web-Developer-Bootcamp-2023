@@ -7,7 +7,7 @@
     
     <h1 class="d-flex justify-content-center my-4">Add a <%= title %> member</h1>
 
-    <form class="d-grid gap-3 col-5 mx-auto" action="/<%= category %>" method="post">
+    <form class="d-grid gap-3 col-8 col-md-5 mx-auto" action="/<%= category %>" method="post">
         <% for (let field of fields) { %>
             <div class="form-group">
                 <label class="mb-1 input-label" for="<%= field %>"><%= field %>: </label>
@@ -16,6 +16,6 @@
         <% } %>
 
         <button type="submit" class="btn btn-primary custom-btn mt-3">Save</button>
-      </form>
+    </form>
 </body>
 </html>
