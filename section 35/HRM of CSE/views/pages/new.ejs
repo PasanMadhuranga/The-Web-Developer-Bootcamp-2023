@@ -1,0 +1,15 @@
+<%- include('../partials/head') %>
+
+    <title>Add</title>
+</head>
+<body>
+    <h1>Add a <%= title %> member</h1>
+    <form action="/<%= category %>" method="post">
+        <% for (let field of fields) { %>
+            <label for="<%= field %>"><%= field %>: </label>
+            <input type="<%= field === 'email' ? 'email' : field === 'age' ? 'number' : 'text' %>" name="<%= field %>">
+        <% } %>
+        <button>Add member</button>
+    </form>
+</body>
+</html>

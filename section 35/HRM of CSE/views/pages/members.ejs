@@ -1,0 +1,15 @@
+<%- include('../partials/head') %>
+
+    <title><%= category %></title>
+</head>
+<body>
+    <h1><%= title %></h1>
+
+    <ul>
+        <% for (let member of members) { %>
+            <li><a href="/<%= category %>/<%= member.id %>"><%= member.name %></a></li>
+        <% } %>
+    </ul>
+    <a href="/<%= category %>/new">Add member</a>
+</body>
+</html>

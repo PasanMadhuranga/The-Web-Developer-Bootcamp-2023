@@ -1,0 +1,17 @@
+<%- include('../partials/head') %>
+
+    <title>Update</title>
+</head>
+<body>
+    <h1>Update the details of <%= details.name %></h1>
+    <form method="post" action="/<%= category %>/<%= details.id %>?_method=PATCH">
+        <% for (let key in details) { %>
+            <% if (key !== 'id') { %>
+                <label for="<%= key %>"><%= key %>: </label>
+                <input type="<%= key === 'email' ? 'email' : key === 'age' ? 'number' : 'text' %>" value="<%= details[key] %>" name="<%= key %>">
+            <% } %>
+        <% } %>
+        <button>Update</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<%- include('../partials/head') %>
+
+    <title>Profile</title>
+</head>
+<body>
+    <form action="/<%= category %>" method="get">
+        <button>&larr;</button>
+    </form>
+    <h1><%= details.name %></h1>
+    <ul>
+        <% for (let key in details) { %>
+            <% if (key !== 'name') { %>
+                <li><%= key %>: <%= details[key] %></li>
+            <% } %>
+        <% } %>
+    </ul>
+    <form action="/<%= category %>/<%= details.id %>/update" method="get">
+        <button>Update</button>
+    </form>
+    <form method="post" action="/<%= category %>/<%= details.id %>?_method=DELETE">
+        <button>Remove</button>
+    </form>
+</body>
+</html>
+
+<!-- id: 'ACSE-001',
+            name: 'Dr. Md. Abu Sayeed',
+            designation: 'Professor',
+            age: 50,
+            email: 'abu233@gmail.com' -->
