@@ -52,3 +52,11 @@ footer {
 .left-key, .input-label {
     color: #3652AD;
 }
+
+.last-item {
+    padding-bottom: 120px;
+}
+
+.bg-dark {
+    background-color: #0a032d!important;
+}
