@@ -7,7 +7,7 @@
     
     <h1 class="d-flex justify-content-center my-4">Update the details of <%= details.name %></h1>
 
-    <form class="d-grid gap-3 col-8 col-md-5 col-5 mx-auto" method="post" action="/<%= category %>/<%= details.id %>?_method=PATCH">
+    <form class="d-grid gap-3 col-8 col-md-5 col-5 mx-auto" method="post" action="/hrm/<%= category %>/<%= details.id %>?_method=PATCH">
         <% for (let key in details) { %>
             <% if (key !== 'id') { %>
                 <div class="form-group">

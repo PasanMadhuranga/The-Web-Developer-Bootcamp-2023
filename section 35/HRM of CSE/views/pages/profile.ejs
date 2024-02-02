@@ -19,12 +19,12 @@
             </div>
             <div class="row mx-2">
                 <div class="col">
-                    <form action="/<%= category %>/<%= details.id %>/update" method="get">
+                    <form action="/hrm/<%= category %>/<%= details.id %>/update" method="get">
                         <button class="btn btn-warning">Update</button>
                     </form>
                 </div>
                 <div class="col text-end">
-                    <form method="post" action="/<%= category %>/<%= details.id %>?_method=DELETE">
+                    <form method="post" action="/hrm/<%= category %>/<%= details.id %>?_method=DELETE">
                         <button class="btn btn-danger">Remove</button>
                     </form>
                 </div>

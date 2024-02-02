@@ -9,12 +9,12 @@
 
     <ul class="d-grid gap-3 member-list">
         <% for (let member of members) { %>
-            <li><a href="/<%= category %>/<%= member.id %>" class="member-name"><%= member.name %></a></li>
+            <li><a href="/hrm/<%= category %>/<%= member.id %>" class="member-name"><%= member.name %></a></li>
         <% } %>
     </ul>
 
     <div class="col-6 mx-auto text-center"> 
-        <a href="/<%= category %>/new" class="btn btn-block btn-primary btn-lg mb-2 custom-btn">Add member</a>
+        <a href="/hrm/<%= category %>/new" class="btn btn-block btn-primary btn-lg mb-2 custom-btn">Add member</a>
     </div> 
 </body>
 </html>

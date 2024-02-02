@@ -35,15 +35,11 @@ app.use(express.static(path.join(__dirname, '/public')));
 // Setting EJS as the templating engine to render HTML on the server-side
 app.set('view engine', 'ejs');
 
-app.get('/', (req, res) => {
+app.get('/hrm', (req, res) => {
     res.render('pages/home');
 })
 
-app.get('/favicon.ico', (req, res) => {
-    res.sendStatus(204); // No content
-});
-
-app.get('/:category', (req, res) => {
+app.get('/hrm/:category', (req, res) => {
     const { category } = req.params;
     let members;
     let title;
@@ -63,7 +59,7 @@ app.get('/:category', (req, res) => {
     res.render('pages/members', { members, title, category })
 })
 
-app.post('/:category', (req, res) => {
+app.post('/hrm/:category', (req, res) => {
     const { category } = req.params;
     switch (category) {
         case "academic":
@@ -78,10 +74,10 @@ app.post('/:category', (req, res) => {
             req.body.id = getNewId(students, 'SCSE')
             students.push(req.body)
     }
-    res.redirect(`/${category}`);
+    res.redirect(`/hrm/${category}`);
 })
 
-app.get('/:category/new', (req, res) => {
+app.get('/hrm/:category/new', (req, res) => {
     const { category } = req.params;
     let fields;
     let title;
@@ -101,10 +97,9 @@ app.get('/:category/new', (req, res) => {
     res.render('pages/new', { fields, title, category });
 })
 
-app.get('/:category/:id', (req, res) => {
+app.get('/hrm/:category/:id', (req, res) => {
     const { category, id } = req.params;
     let details;
-
     switch (category) {
         case "academic":
             details = academicStaff.find( a => a.id === id)
@@ -119,7 +114,7 @@ app.get('/:category/:id', (req, res) => {
     res.render('pages/profile', { details, category })
 })
 
-app.get('/:category/:id/update', (req, res) => {
+app.get('/hrm/:category/:id/update', (req, res) => {
     const { category, id } = req.params;
 
     switch (category) {
@@ -136,7 +131,7 @@ app.get('/:category/:id/update', (req, res) => {
     res.render('pages/update', { details, category })
 })
 
-app.patch('/:category/:id', (req, res) => {
+app.patch('/hrm/:category/:id', (req, res) => {
     const { category, id } = req.params;
     let updateProfile;
 
@@ -165,10 +160,10 @@ app.patch('/:category/:id', (req, res) => {
     updateProfile.name = req.body.name
     updateProfile.age = req.body.age
 
-    res.redirect(`/${category}/${id}`)
+    res.redirect(`/hrm/${category}/${id}`)
 })
 
-app.delete('/:category/:id', (req, res) => {
+app.delete('/hrm/:category/:id', (req, res) => {
     const { category, id } = req.params;
 
     switch (category) {
@@ -181,7 +176,7 @@ app.delete('/:category/:id', (req, res) => {
         case "student":
             students = students.filter( a => a.id !== id)
     }
-    res.redirect(`/${category}`)
+    res.redirect(`/hrm/${category}`)
 })
 
 app.listen(3000, () => {
