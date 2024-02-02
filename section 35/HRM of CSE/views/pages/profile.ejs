@@ -3,9 +3,8 @@
     <title>Profile</title>
 </head>
 <body>
-    <form action="/<%= category %>" method="get">
-        <button>&larr;</button>
-    </form>
+    <%- include('../partials/navbar') %>
+    
     <h1><%= details.name %></h1>
     <ul>
         <% for (let key in details) { %>

@@ -3,6 +3,8 @@
     <title>Add</title>
 </head>
 <body>
+    <%- include('../partials/navbar') %>
+    
     <h1>Add a <%= title %> member</h1>
     <form action="/<%= category %>" method="post">
         <% for (let field of fields) { %>
