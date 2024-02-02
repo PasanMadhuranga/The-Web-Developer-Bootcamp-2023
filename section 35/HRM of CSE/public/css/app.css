@@ -2,7 +2,7 @@ body {
     background-color: #E9F6FF;
 }
 
-h1 {
+h1, h2 {
     font-family: 'Castoro Titling', serif;
     color: #280274;
 }
@@ -13,7 +13,7 @@ h1 {
     padding-left: 0;
 }
 
-.btn {
+.custom-btn {
     background-color: #3652AD;
 }
 
@@ -22,12 +22,26 @@ h1 {
     font-size: 1.5em;
     box-shadow: inset 0 0 0 0 #3eb0da;
     color: #3eb0da;
-    /* margin: 0 -.25rem;
-    padding: 0 .25rem; */
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
 }
 
 .member-name:hover {
     box-shadow: inset 200px 0 0 0 #3eb0da;
     color: white;
+}
+
+.card {
+    width: 28rem;
+}
+
+.member-detail {
+    font-family: 'Roboto', sans-serif;
+}
+
+.member-detail::marker {
+    color: #3652AD;
+}
+
+.left-key, .input-label {
+    color: #3652AD;
 }
