@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothes</title>
+</head>
+<body>
+    <h1>Pasan Clothing Store</h1>
+    <form action="/clothes/filter" method="get">
+        <label for="catFilter">Category: </label>
+        <select name="catFilter" id="catFilter">
+            <option value="all" <%= catFilter === 'all' ? 'selected' : '' %>>All</option>
+            <% for (let category of categoriesArr) { %>
+                <option value=<%= category %> <%= catFilter === category ? 'selected' : '' %>><%= category %></option>
+            <% } %>
+        </select>
+        <input type="range" id="price" name="price" min="0" max="50" value="<%= typeof price !== 'undefined' ? price : 50 %>" />
+        <label for="price">Price</label>
+        <button>Apply</button>
+    </form>
+    <ul>
+        <% for (let cloth of clothes) { %>
+            <li><a href="/clothes/<%= cloth._id %>"><%= cloth.name %>
+                <ul>
+                    <li>cloth.price</li>
+                    <img src="<%= cloth.image %>" alt="<%= cloth.name %> image">
+                </ul>
+            </a></li>
+        <% } %>
+    </ul>
+    <a href="/clothes/new">Add Cloth</a>
+</body>
+</html>

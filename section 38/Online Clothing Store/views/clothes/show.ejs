@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show</title>
+</head>
+<body>
+    <h1><%= cloth.name %></h1>
+    <img src="<%= cloth.image %>" alt="image of the product">
+    <ul>
+        <li>Price: <%= cloth.price %></li>
+        <li>Category: <%= cloth.category %></li>
+        <li>Quantity: <%= cloth.qty %></li>
+        <li>Available Sizes: <%= cloth.sizes %></li>
+    </ul>
+    <a href="/clothes">Back</a>
+    <a href="/clothes/<%= cloth._id %>/edit">Edit</a>
+    <form method="post" action="/clothes/<%= cloth._id %>?_method=DELETE">
+        <button>Delete Product</button>
+    </form>
+</body>
+</html>
