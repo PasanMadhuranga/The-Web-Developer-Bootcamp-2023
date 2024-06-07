@@ -1,0 +1,10 @@
+.Dice {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* Adjust as needed (e.g., flex-start, space-between) */
+  align-items: center; /* Adjust as needed */
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
